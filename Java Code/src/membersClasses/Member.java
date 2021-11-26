@@ -13,16 +13,16 @@ public class Member
     private boolean isPartOfStaff = false;
     private static ArrayList<Member> membersList = new ArrayList<>();
 
-    public Member(String name, int age, String email) {
+    public Member(String name, int age, String email,Boolean hasPaid) {             //Primary constructor
         this.name = name;
         this.age = age;
-        this.hasPaid = true;
+        this.hasPaid = hasPaid;
         this.email = email;
         this.isPassive = false;
         this.isPartOfStaff = false;
     }
 
-    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {          //Secondary Constructor
         this.name = name;
         this.age = age;
         this.email = email;

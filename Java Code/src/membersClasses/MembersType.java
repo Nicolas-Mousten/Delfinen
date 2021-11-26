@@ -5,14 +5,14 @@ public class MembersType
     private int yearlySubscriptionPrice;
     private static int juniorMember = 1000;
     private static int seniorMember = 1600;
-    private static int pensionistMember = (int) Math.round(seniorMember*0.75);
+    private static int pensionistMember = (int) Math.round(seniorMember*0.75);      //Laver pensionist pris 25% billigere æn Senior
     private static int passiveMember = 500;
 
-    public MembersType(int age, Boolean isPassive)
+    public MembersType(int age, Boolean isPassive)              //Viktor
     {
         if(age < 18 && !isPassive)
         {
-            yearlySubscriptionPrice = juniorMember;
+            yearlySubscriptionPrice = juniorMember;                 //assigner den statiske værdi til objectet.
         }
 
         // Else if member is +18 and under 60 not passive
