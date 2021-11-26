@@ -13,16 +13,17 @@ public class Member
     private boolean isPartOfStaff = false;
     private static ArrayList<Member> membersList = new ArrayList<>();
 
-    public Member(String name, int age, String email,Boolean hasPaid) {             //Primary constructor
+    public Member(String name, int age, String email,Boolean hasPaid) {     //Viktor        //Primary constructor
         this.name = name;
         this.age = age;
         this.hasPaid = hasPaid;
         this.email = email;
         this.isPassive = false;
         this.isPartOfStaff = false;
+        this.membersType = getMemberShipType();
     }
 
-    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {          //Secondary Constructor
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {    //Viktor      //Secondary Constructor
         this.name = name;
         this.age = age;
         this.email = email;
@@ -45,5 +46,19 @@ public class Member
         this.hasPaid = hasPaid;
         this.isPassive = isPassive;
         this.isPartOfStaff = isPartOfStaff;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", "+membersType +
+                ", hasPaid=" + hasPaid +
+                ", isPassive=" + isPassive +
+                ", isPartOfStaff=" + isPartOfStaff +
+                '}';
     }
 }
