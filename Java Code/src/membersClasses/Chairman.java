@@ -1,4 +1,5 @@
 package membersClasses;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Chairman extends Cashier{
@@ -23,11 +24,11 @@ public class Chairman extends Cashier{
         String memberName = scanner.nextLine();
         System.out.println("Please type in new members age");
         int memberAge = scanner.nextInt();
-        boolean hasPaid = hasMemberPain(scanner);
+        scanner.nextLine();
+        boolean hasPaid = hasMemberPaid(scanner);  //Hvis den er false har de ikke betalt, hvis den er true har de betalt
         String getEmail = getMemberEmail(scanner);
 
-        System.out.println(memberName);
-        //FileReader.addMemberToCsvFile();
+        FileReader.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail);
     }
 
     public static String getMemberEmail(Scanner scanner){
@@ -36,12 +37,25 @@ public class Chairman extends Cashier{
         return email;
     }
 
-    public static boolean hasMemberPain(Scanner scanner) {
-        boolean hasPaid = true;
-        System.out.println("Has new member paid? 'Y' for yes, 'N' for no");
-        String memberAnswer = scanner.nextLine();
-        if(memberAnswer.equals("N")){
-            hasPaid = false;
+    public static boolean hasMemberPaid(Scanner scanner) {
+        boolean hasPaid = false;
+        String memberAnswer = "";
+        do{
+            System.out.println("Has new member paid? 'y' for yes, 'n' for no");
+            memberAnswer = scanner.nextLine();
+            if(memberAnswer.equalsIgnoreCase("y") || memberAnswer.equalsIgnoreCase("n")) {
+                hasPaid = checkMemberPay(memberAnswer, hasPaid);
+            } else {
+
+            }
+        }while(!memberAnswer.equalsIgnoreCase("y") && !memberAnswer.equalsIgnoreCase("n"));
+        return hasPaid;
+    }
+
+    public static boolean checkMemberPay(String memberAnswer, boolean hasPaid){
+        if (memberAnswer.equals("y")) {
+            hasPaid = true;
+        } else {
         }
         return hasPaid;
     }
