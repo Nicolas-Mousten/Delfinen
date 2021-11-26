@@ -6,18 +6,32 @@ public class Member
 {
     private String name;
     private int age;
-    private int yearlyJuniorSubscriptionPrice;
-    private int yearlySeniorSubscriptionPrice;
+    private String email;
+    private MembersType membersType;
     private boolean hasPaid = true;
-    private boolean isPassive = false;
+    private boolean isPassive;
     private boolean isPartOfStaff = false;
     private static ArrayList<Member> membersList = new ArrayList<>();
 
-    MembersType membersType = new MembersType(name, age, hasPaid, isPassive, isPartOfStaff);
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.hasPaid = hasPaid;
+        this.isPassive = false;
+        this.isPartOfStaff = isPartOfStaff;
+    }
 
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.hasPaid = hasPaid;
+        this.isPassive = isPassive;
+        this.isPartOfStaff = isPartOfStaff;
+    }
 
-
-    public MembersType getMemberShipType(boolean isPassive, int yearlySubscriptionPrice, int yearlySeniorSubscriptionPrice)
+    public MembersType getMemberShipType()
     {
         // Make if statement with input from constructor
 
@@ -54,4 +68,5 @@ public class Member
         this.isPassive = isPassive;
         this.isPartOfStaff = isPartOfStaff;
     }
+    MembersType membersType = new MembersType(name, age, hasPaid, isPassive, isPartOfStaff);
 }
