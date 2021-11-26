@@ -29,35 +29,13 @@ public class Member
         this.hasPaid = hasPaid;
         this.isPassive = isPassive;
         this.isPartOfStaff = isPartOfStaff;
+        this.membersType = getMemberShipType();
     }
 
     public MembersType getMemberShipType()
     {
-        // Make if statement with input from constructor
-
-        // If member is under 18 and not passive
-        if(age < 18 && !isPassive)
-        {
-            yearlySubscriptionPrice = 1000;
-        }
-
-        // Else if member is +18 and under 60 not passive
-        else if(age >= 18 && age < 60 && !isPassive)
-        {
-            yearlySeniorSubscriptionPrice  = 1600;
-        }
-        // Else if member is over 60 and not passive
-        else if(age > 60 && !isPassive)
-        {
-            yearlySeniorSubscriptionPrice *= .25;
-        }
-        // Else is passive
-        else
-        {
-            yearlySubscriptionPrice = 500;
-        }
-
-        return MembersType;
+        MembersType currentMember = new MembersType(this.age, this.isPassive);
+        return currentMember;
     }
 
     public Member(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff)
@@ -68,5 +46,4 @@ public class Member
         this.isPassive = isPassive;
         this.isPartOfStaff = isPartOfStaff;
     }
-    MembersType membersType = new MembersType(name, age, hasPaid, isPassive, isPartOfStaff);
 }
