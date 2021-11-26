@@ -7,6 +7,7 @@ public class MembersType
     private static int seniorMember = 1600;
     private static int pensionistMember = (int) Math.round(seniorMember*0.75);
     private static int passiveMember = 500;
+
     public MembersType(int age, Boolean isPassive)
     {
         if(age < 18 && !isPassive)
@@ -30,5 +31,4 @@ public class MembersType
             yearlySubscriptionPrice = 500;
         }
     }
-
 }

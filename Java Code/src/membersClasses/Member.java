@@ -8,18 +8,18 @@ public class Member
     private int age;
     private String email;
     private MembersType membersType;
-    private boolean hasPaid = true;
+    private boolean hasPaid;
     private boolean isPassive;
     private boolean isPartOfStaff = false;
     private static ArrayList<Member> membersList = new ArrayList<>();
 
-    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff) {
+    public Member(String name, int age, String email) {
         this.name = name;
         this.age = age;
+        this.hasPaid = true;
         this.email = email;
-        this.hasPaid = hasPaid;
         this.isPassive = false;
-        this.isPartOfStaff = isPartOfStaff;
+        this.isPartOfStaff = false;
     }
 
     public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
