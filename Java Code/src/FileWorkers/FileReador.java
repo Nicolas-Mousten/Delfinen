@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.Scanner;
 
-public class FileReader {
+public class FileReador {
     public static void addMemberToCsvFile(String memberName,int memberAge,boolean hasPaid,String getEmail){
         try {
             FileWriter writer = new FileWriter("Resources/MembersList.csv", true);

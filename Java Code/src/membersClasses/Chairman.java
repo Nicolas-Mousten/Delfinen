@@ -1,6 +1,6 @@
 package membersClasses;
-import java.util.Locale;
 import java.util.Scanner;
+import FileWorkers.FileReador;
 
 public class Chairman extends Cashier{
     public Chairman(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
@@ -10,8 +10,6 @@ public class Chairman extends Cashier{
     public Chairman(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff) {
         super(name, age, hasPaid, isPassive, isPartOfStaff);
     }
-
-
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -28,7 +26,7 @@ public class Chairman extends Cashier{
         boolean hasPaid = hasMemberPaid(scanner);  //Hvis den er false har de ikke betalt, hvis den er true har de betalt
         String getEmail = getMemberEmail(scanner);
 
-        FileReader.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail);
+        FileReador.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail);
     }
 
     public static String getMemberEmail(Scanner scanner){

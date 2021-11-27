@@ -16,10 +16,10 @@ public class Member
     public Member(String name, int age, String email,Boolean hasPaid) {     //Viktor        //Primary constructor
         this.name = name;
         this.age = age;
-        this.hasPaid = hasPaid;
         this.email = email;
-        this.isPassive = false;
+        this.hasPaid = hasPaid;
         this.isPartOfStaff = false;
+        this.isPassive = false;
         this.membersType = getMemberShipType();
     }
 
