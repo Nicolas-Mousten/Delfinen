@@ -1,3 +1,2 @@
 Lasse,23,true,hejmeddig@gmail.com
 Lasse;23;false;whatupmydude@hotmail.com
-Member{name='Nicolas', age=21, email='nicolas.mousten@gmail.com', yearlySubscriptionPrice=1600, type='seniorMember', hasPaid=true, isPassive=false, isPartOfStaff=false}
