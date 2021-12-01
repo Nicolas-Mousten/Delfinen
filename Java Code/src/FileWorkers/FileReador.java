@@ -6,11 +6,11 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class FileReador {
-    public static void addMemberToCsvFile(String memberName,int memberAge,boolean hasPaid,String getEmail){
+    public static void addMemberToCsvFile(String memberName,int memberAge,boolean hasPaid,String getEmail, Boolean isPartOfStaff, Boolean isPassive){
         try {
             FileWriter writer = new FileWriter("Resources/MembersList.csv", true);
 
-            writer.append(memberName + ";" + memberAge + ";" + hasPaid + ";" + getEmail);
+            writer.append(memberName + ";" + memberAge + ";" + hasPaid + ";" + getEmail + ";" + isPartOfStaff + ";" + isPassive);
             writer.append("\n");
 
             writer.close();

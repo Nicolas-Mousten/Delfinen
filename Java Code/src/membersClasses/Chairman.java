@@ -6,7 +6,7 @@ public class Chairman extends Cashier{
     public Chairman(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
-
+    // mangler email
     public Chairman(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff) {
         super(name, age, hasPaid, isPassive, isPartOfStaff);
     }
@@ -26,7 +26,7 @@ public class Chairman extends Cashier{
         boolean hasPaid = hasMemberPaid(scanner);  //Hvis den er false har de ikke betalt, hvis den er true har de betalt
         String getEmail = getMemberEmail(scanner);
 
-        FileReador.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail);
+        FileReador.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail, isPartOfStaff, isPassive);
     }
 
     public static String getMemberEmail(Scanner scanner){
