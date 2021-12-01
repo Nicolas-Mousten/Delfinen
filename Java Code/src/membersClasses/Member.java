@@ -55,7 +55,7 @@ public class Member
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", email='" + email + '\'' +
-                ", "+membersType +
+                ", "+membersType +          //Nicolas
                 ", hasPaid=" + hasPaid +
                 ", isPassive=" + isPassive +
                 ", isPartOfStaff=" + isPartOfStaff +
