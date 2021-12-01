@@ -6,7 +6,7 @@ public class Chairman extends Cashier{
     public Chairman(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
-
+    // mangler email
     public Chairman(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff) {
         super(name, age, hasPaid, isPassive, isPartOfStaff);
     }

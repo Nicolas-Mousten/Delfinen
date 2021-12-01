@@ -38,7 +38,7 @@ public class MembersType
     }
 
     @Override
-    public String toString() {
+    public String toString() {      //Nicolas
         return "yearlySubscriptionPrice=" + yearlySubscriptionPrice +
                 ", type='" + type + '\'';
     }
