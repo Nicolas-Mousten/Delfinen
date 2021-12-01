@@ -39,6 +39,22 @@ public class Member
         return currentMember;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public boolean isHasPaid() {
+        return hasPaid;
+    }
+
     public Member(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff)
     {
         this.name = name;
@@ -59,6 +75,6 @@ public class Member
                 ", hasPaid=" + hasPaid +
                 ", isPassive=" + isPassive +
                 ", isPartOfStaff=" + isPartOfStaff +
-                '}';
+                "}";
     }
 }

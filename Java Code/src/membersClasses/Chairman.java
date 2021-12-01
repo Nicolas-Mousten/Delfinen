@@ -26,7 +26,7 @@ public class Chairman extends Cashier{
         boolean hasPaid = hasMemberPaid(scanner);  //Hvis den er false har de ikke betalt, hvis den er true har de betalt
         String getEmail = getMemberEmail(scanner);
 
-        FileReador.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail, isPartOfStaff, isPassive);
+        FileReador.addMemberToCsvFile(memberName, memberAge, hasPaid, getEmail);
     }
 
     public static String getMemberEmail(Scanner scanner){
