@@ -1,5 +1,5 @@
 package TestThings;
-import FileWorkers.FileReador;
+import FileWorkers.FileReaderClass;
 import membersClasses.Member;
 
 import java.io.File;
@@ -32,7 +32,7 @@ public class CreateMembers {
             int age = Members.get(i).getAge();
             String email = Members.get(i).getEmail();
             boolean hasPaid = Members.get(i).isHasPaid();
-            FileReador.addMemberToCsvFile(name,age,hasPaid,email);
+            FileReaderClass.addLineToCsvFile(name,age,hasPaid,email);
         }
 
     }
