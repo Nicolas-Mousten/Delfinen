@@ -6,15 +6,8 @@ public class Chairman extends Cashier{
     public Chairman(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
-    // mangler email
-    public Chairman(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff) {
-        super(name, age, hasPaid, isPassive, isPartOfStaff);
-    }
 
     public static void main(String[] args) {
-
-
-        Chairman chairman = new Chairman("benny",10,true,true,true);
 
         chairmanMenu();
 
@@ -40,12 +33,17 @@ public class Chairman extends Cashier{
                     whileKey = false;
                     break;
                 case 3:
+                    String filePath = "Resources/MembersList.csv";
                     System.out.println("Please write what you want to search after");
                     String searchTerm = scanner.nextLine();
-                    FileReaderClass.searchData(searchTerm);
+                    FileReaderClass.searchData(searchTerm, filePath);
                     whileKey = false;
                     break;
                 case 4:
+                    editMemberFile(scanner);
+                    whileKey = false;
+                    break;
+                case 5:
                     whileKey = false;
                     break;
 
@@ -54,9 +52,21 @@ public class Chairman extends Cashier{
         }while(whileKey);
     }
 
+    public static void editMemberFile(Scanner scanner){
+        String filePath = "Resources/MembersList.csv";
+        System.out.println("Please type position");
+        int position = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Please type in the data you would like to edit");
+        String oldData = scanner.nextLine();
+        System.out.println("Please type the new data");
+        String newData = scanner.nextLine();
+        FileReaderClass.editLine(oldData, newData, filePath, position);
+    }
+
     public static void printChairmanMenu() {
-        String[] ChairmanMenu = {"Remove member", "Add member", "Search data", "Exit program"};
-        int[] ChairmanMenuNumbers = {1, 2, 3, 4};
+        String[] ChairmanMenu = {"Remove member", "Add member", "Search data", "Edit data", "Exit program"};
+        int[] ChairmanMenuNumbers = {1, 2, 3, 4, 5};
         for (int i = 0; i < ChairmanMenuNumbers.length; i++) {
             System.out.println(ChairmanMenuNumbers[i] + " " + ChairmanMenu[i]);
         }
@@ -75,6 +85,8 @@ public class Chairman extends Cashier{
     }
 
     public static void inputNewMembers(Scanner scanner){
+        String filePath = "Resources/MembersList.csv";
+        int key = 1;
         System.out.println("Please type in the new members name");
         String memberName = scanner.nextLine();
         System.out.println("Please type in new members age");
@@ -83,7 +95,7 @@ public class Chairman extends Cashier{
         boolean hasPaid = hasMemberPaid(scanner);  //Hvis den er false har de ikke betalt, hvis den er true har de betalt
         String getEmail = getMemberEmail(scanner);
 
-        FileReaderClass.addLineToCsvFile(memberName, memberAge, hasPaid, getEmail);
+        FileReaderClass.addLineToCsvFile(memberName, memberAge, hasPaid, getEmail, key, filePath);
     }
     //Made by Lasse
     public static String getMemberEmail(Scanner scanner){

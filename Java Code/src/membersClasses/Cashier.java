@@ -5,10 +5,6 @@ public class Cashier extends Trainer{
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
 
-    public Cashier(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff) {
-        super(name, age, hasPaid, isPassive, isPartOfStaff);
-    }
-
     public void viewContigent(){
 
     }
