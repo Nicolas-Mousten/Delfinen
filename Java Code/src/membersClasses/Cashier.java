@@ -15,7 +15,6 @@ public class Cashier extends Trainer{
 
     public void promptChairmanToRemoveMember(){
 
-
     }
 
 }

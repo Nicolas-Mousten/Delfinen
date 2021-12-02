@@ -14,7 +14,7 @@ public class FileReaderClass {
         try {
             FileWriter writer = new FileWriter("Resources/MembersList.csv", true);
 
-            writer.append(memberName + "," + memberAge + "," + hasPaid + "," + getEmail);
+            writer.append(memberName + "," + memberAge + "," + getEmail + "," + hasPaid);
             writer.append("\n");
 
             writer.close();

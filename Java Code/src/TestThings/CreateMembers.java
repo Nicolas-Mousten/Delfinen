@@ -32,6 +32,7 @@ public class CreateMembers {
             int age = Members.get(i).getAge();
             String email = Members.get(i).getEmail();
             boolean hasPaid = Members.get(i).isHasPaid();
+            int yearlySubscription = Members.get(i).getMemberShipType().getYearlySubscriptionPrice();
             FileReaderClass.addLineToCsvFile(name,age,hasPaid,email);
         }
 

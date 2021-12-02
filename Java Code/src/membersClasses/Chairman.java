@@ -13,16 +13,17 @@ public class Chairman extends Cashier{
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+
         Chairman chairman = new Chairman("benny",10,true,true,true);
 
-        chairmanMenu(scanner);
+        chairmanMenu();
 
 
     }
     //Made by Lasse
 
-    public static void chairmanMenu(Scanner scanner){
+    public static void chairmanMenu(){
+        Scanner scanner = new Scanner(System.in);
         boolean whileKey = true;
         do{
             printChairmanMenu();
