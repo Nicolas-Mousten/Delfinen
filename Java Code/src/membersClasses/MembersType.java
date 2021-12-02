@@ -37,6 +37,10 @@ public class MembersType
         }
     }
 
+    public int getYearlySubscriptionPrice() {
+        return yearlySubscriptionPrice;
+    }
+
     @Override
     public String toString() {      //Nicolas
         return "yearlySubscriptionPrice=" + yearlySubscriptionPrice +
