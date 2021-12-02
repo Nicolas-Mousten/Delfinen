@@ -5,7 +5,4 @@ public class Trainer extends Member{
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
 
-    public Trainer(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff) {
-        super(name, age, hasPaid, isPassive, isPartOfStaff);
-    }
 }
