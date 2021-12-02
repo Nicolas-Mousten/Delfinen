@@ -2,7 +2,7 @@ package UI;
 
 import java.util.Scanner;
 
-public class LoginUI {
+public class LoginUI {                      //Nicolas
     private static Scanner sc = new Scanner(System.in);
     public static int startMenu(){
         System.out.println("Welcome to Delfin SwimmingClub");
@@ -27,7 +27,6 @@ public class LoginUI {
             else{
                 System.out.println("Not a legit answer");
             }
-            System.out.println(choice);
         }while(choice<1 || choice>3);
         return returnValue;
     }
