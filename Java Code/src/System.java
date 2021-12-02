@@ -10,7 +10,6 @@ public class System {
 
             case 3:
                 Chairman.chairmanMenu();
-
         }
     }
 }

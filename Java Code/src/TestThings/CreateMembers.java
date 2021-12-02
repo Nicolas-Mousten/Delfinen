@@ -23,7 +23,7 @@ public class CreateMembers {
             int randAge = random.nextInt(100-1)+1;
             boolean randHasPaid = random.nextBoolean();
             String name = names[randNames];
-            String email = name+"@"+randAge;
+            String email = name+"@"+i;
             Member currentMember = new Member(name,randAge,email,randHasPaid);
             Members.add(currentMember);
         }
