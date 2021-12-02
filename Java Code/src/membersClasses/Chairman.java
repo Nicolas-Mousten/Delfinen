@@ -54,7 +54,8 @@ public class Chairman extends Cashier{
 
     public static void editMemberFile(Scanner scanner){
         String filePath = "Resources/MembersList.csv";
-        System.out.println("Please type position");
+        printPositionMenu();
+        System.out.println("Please type the number for which category you would like to edit in");
         int position = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Please type in the data you would like to edit");
@@ -72,10 +73,18 @@ public class Chairman extends Cashier{
         }
     }
 
+    public static void printPositionMenu() {
+        String[] ChairmanMenu = {"Name", "Age", "Has member paid", "E-mail"};
+        int[] ChairmanMenuNumbers = {1, 2, 3, 4};
+        for (int i = 0; i < ChairmanMenuNumbers.length; i++) {
+            System.out.println(ChairmanMenuNumbers[i] + " " + ChairmanMenu[i]);
+        }
+    }
+
     public static void removeMember(Scanner scanner){
         String filePath = "Resources/MembersList.csv";
         int position = 4;                                   //Dette er positionen i csv filen jeg vil søge efter. Vi går efter email da det er unik for hver member
-                                                            //og email ligger på position 4
+        //og email ligger på position 4
         boolean checkForData = false;
         do {
             System.out.println("Please write the email of the member you would like to delete");
