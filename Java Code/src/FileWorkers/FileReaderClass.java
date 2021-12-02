@@ -1,6 +1,7 @@
 package FileWorkers;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileReader;
 import java.io.BufferedReader;
@@ -135,12 +136,12 @@ public class FileReaderClass {
             BufferedReader br = new BufferedReader(fr);
 
             while((currentLine = br.readLine()) != null){                                 //currentLine bliver sat lig med den næste linje så længe den eksistere. Hvis næste linje ikke eksistere stopper while loopet.
-                data = currentLine.split(";");                                            //Her bliver den første linje i filen lagt i en array som splitter dem op i ','.
-                if(!(data[positionOfTerm].equalsIgnoreCase(dataToEdit))){                   //Her tjekker den om det du gerne vil havde fjernet er lig med den data der er gemt i data
+                data = currentLine.split(";");                                      //Her bliver den første linje i filen lagt i en array som splitter dem op i ','.
+                if(!(data[positionOfTerm].equalsIgnoreCase(dataToEdit))){                 //Her tjekker den om det du gerne vil havde fjernet er lig med den data der er gemt i data
                     pw.println(currentLine);                                              //Hvis de ikke er lig med hinanden så gemmer vi den i den nye fil
                 }else{
                     data[positionOfTerm] = newData;
-                    pw.println(currentLine);
+                    pw.println(data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3]);
                     checkForData = true;
                 }
             }
