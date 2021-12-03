@@ -16,7 +16,6 @@ public class Cashier extends Trainer{
         File membersList = new File("Resources/MembersList.csv");
         int totalContigent = 0;
         try {
-            // Er næsten færdig mangler bare isPassive attributten, så virker den
             // Husk at oprette en ny cashier for at teste med denne kode
             /*Cashier cashier = new Cashier("testName",89,"fghdfjkgh",true,true,false);
             cashier.viewContigent();*/
@@ -29,8 +28,10 @@ public class Cashier extends Trainer{
                 int age = Integer.parseInt(stringsInArray[1]);
                 Boolean hasPaid = Boolean.parseBoolean(stringsInArray[2]);
                 String email = stringsInArray[3];
+                Boolean isPassive = Boolean.parseBoolean(stringsInArray[4]);
+                Boolean isPartOfStaff = Boolean.parseBoolean(stringsInArray[5]);
                 // bruger age og has paid til at regne ud, hvor meget en kunde skal betale
-                MembersType membersType = new MembersType(age,hasPaid);
+                MembersType membersType = new MembersType(age,isPassive);
                 int contigent = membersType.getYearlySubscriptionPrice();
                 // adder contigent til totalContigent
                 totalContigent = totalContigent+contigent;
