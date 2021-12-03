@@ -1,9 +1,6 @@
 package membersClasses;
 
-import FileWorkers.FileReaderClass;
-
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Cashier extends Trainer{
@@ -18,7 +15,7 @@ public class Cashier extends Trainer{
         try {
             // Husk at oprette en ny cashier for at teste med denne kode
             /*Cashier cashier = new Cashier("testName",89,"fghdfjkgh",true,true,false);
-            cashier.viewContigent();*/
+            cashier.viewContingent();*/
             Scanner DatabaseReader = new Scanner(membersList);
             while(DatabaseReader.hasNextLine()) {
                 String data = DatabaseReader.nextLine();
@@ -62,6 +59,7 @@ public class Cashier extends Trainer{
                 Boolean hasPaid = Boolean.parseBoolean(stringsInArray[2]);
                 String email = stringsInArray[3];
 
+                // Dette if statement skriver til MembersToBeRemoved.csv, hvis en kunde ikke har betalt
                 if (hasPaid.equals(false)) {
                     String abc = name+";"+age+";"+email;;
                     bufferedWriter.write(abc);
@@ -69,6 +67,7 @@ public class Cashier extends Trainer{
                 }
             }
             bufferedWriter.close();
+            // Her er der to exceptions som der bliver fanget
         } catch (FileNotFoundException e) {
             System.out.println("file could not be found");
             e.printStackTrace();
