@@ -33,8 +33,16 @@ public class CreateMembers {
             String email = Members.get(i).getEmail();
             boolean hasPaid = Members.get(i).isHasPaid();
             int yearlySubscription = Members.get(i).getMemberShipType().getYearlySubscriptionPrice();
-            //FileReaderClass.addLineToCsvFile(name,age,hasPaid,email,filepath,key);
+            FileReaderClass.addLineToCsvFile(name,age,hasPaid,email,1,"Resources/MembersList.csv");
         }
 
+    }
+
+
+    public static void PrintCashier(){
+        System.out.println("Cashier");
+    }
+    public static void PrintTrainer(){
+        System.out.println("Trainer");
     }
 }
