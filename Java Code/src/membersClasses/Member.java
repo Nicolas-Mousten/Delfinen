@@ -13,7 +13,8 @@ public class Member
     private boolean isPartOfStaff = false;
     private static ArrayList<Member> membersList = new ArrayList<>();
 
-    public Member(String name, int age, String email,Boolean hasPaid) {     //Viktor        //Primary constructor
+    public Member(String name, int age, String email, Boolean hasPaid)
+    {     //Viktor        //Primary constructor
         this.name = name;
         this.age = age;
         this.email = email;
@@ -31,7 +32,8 @@ public class Member
         this.isPassive = isPassive;
     }
 
-    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {    //Viktor      //Secondary Constructor
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive)
+    {    //Viktor      //Secondary Constructor
         this.name = name;
         this.age = age;
         this.email = email;
@@ -41,25 +43,43 @@ public class Member
         this.membersType = getMemberShipType();
     }
 
+    public static void nameConditions(String nameOne)
+    {
+        String[] notAllowedCharsInName = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
+
+        for (int i = 0; i < notAllowedCharsInName.length - 1; ++i)
+        {
+            if (nameOne.contains(notAllowedCharsInName[i]))
+            {
+                System.out.println("Invalid character in name. Names can only contain letters from the alphabet.");
+            }
+        }
+
+    }
+
     public MembersType getMemberShipType()
     {
         MembersType currentMember = new MembersType(this.age, this.isPassive);
         return currentMember;
     }
 
-    public String getName() {
+    public String getName()
+    {
         return name;
     }
 
-    public int getAge() {
+    public int getAge()
+    {
         return age;
     }
 
-    public String getEmail() {
+    public String getEmail()
+    {
         return email;
     }
 
-    public boolean isHasPaid() {
+    public boolean isHasPaid()
+    {
         return hasPaid;
     }
 
@@ -78,12 +98,13 @@ public class Member
 
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Member{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", email='" + email + '\'' +
-                ", "+membersType +          //Nicolas
+                ", " + membersType +          //Nicolas
                 ", hasPaid=" + hasPaid +
                 ", isPassive=" + isPassive +
                 ", isPartOfStaff=" + isPartOfStaff +
