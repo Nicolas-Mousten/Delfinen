@@ -95,6 +95,8 @@ public class FileReaderClass {
         String age = "";
         String hasPaid = "";
         String email = "";
+        String isPassive = "";
+        String isPartOfStaff = "";
         try {
             FileReader writer = new FileReader(filePath);
             Scanner scanner = new Scanner((Readable) writer);
@@ -106,9 +108,11 @@ public class FileReaderClass {
                 age = scanner.next();
                 hasPaid = scanner.next();
                 email = scanner.next();
+                isPassive = scanner.next();
+                isPartOfStaff = scanner.next();
 
-                if(name.equals(searchTerm) || age.equals(searchTerm) || hasPaid.equals(searchTerm) || email.equals(searchTerm)){
-                    System.out.println(name + " " + age + " " + hasPaid + " " + email);
+                if(name.equals(searchTerm) || age.equals(searchTerm) || hasPaid.equals(searchTerm) || email.equals(searchTerm) || isPassive.equals(searchTerm) || isPartOfStaff.equals(searchTerm)){
+                    System.out.println(name + " " + age + " " + hasPaid + " " + email + " " + isPassive + " " + isPartOfStaff);
                 }
             }
         }catch(Exception e){
