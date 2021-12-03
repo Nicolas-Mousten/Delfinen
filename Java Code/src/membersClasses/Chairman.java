@@ -103,8 +103,10 @@ public class Chairman extends Cashier{
         scanner.nextLine();
         boolean hasPaid = hasMemberPaid(scanner);  //Hvis den er false har de ikke betalt, hvis den er true har de betalt
         String getEmail = getMemberEmail(scanner);
+        boolean isPassive = isMemberPassive(scanner);
+        boolean isPartOfStaff = isMemberPartOfStaff(scanner);
 
-        FileReaderClass.addLineToCsvFile(memberName, memberAge, hasPaid, getEmail, key, filePath);
+        FileReaderClass.addLineToCsvFile(memberName, memberAge, hasPaid, getEmail, isPassive,isPartOfStaff, key, filePath);
     }
     //Made by Lasse
     public static String getMemberEmail(Scanner scanner){
@@ -112,6 +114,37 @@ public class Chairman extends Cashier{
         String email = scanner.nextLine();
         return email;
     }
+
+    public static boolean isMemberPartOfStaff(Scanner scanner) {
+        boolean isPartOfStaff = false;
+        String memberAnswer = "";
+        do{
+            System.out.println("Is member part of staff? 'y' for yes, 'n' for no");
+            memberAnswer = scanner.nextLine();
+            if(memberAnswer.equalsIgnoreCase("y") || memberAnswer.equalsIgnoreCase("n")) {
+                isPartOfStaff = checkMemberPay(memberAnswer, isPartOfStaff);
+            } else {
+
+            }
+        }while(!memberAnswer.equalsIgnoreCase("y") && !memberAnswer.equalsIgnoreCase("n"));
+        return isPartOfStaff;
+    }
+
+    public static boolean isMemberPassive(Scanner scanner) {
+        boolean isPassive = false;
+        String memberAnswer = "";
+        do{
+            System.out.println("Is it a passive member? 'y' for yes, 'n' for no");
+            memberAnswer = scanner.nextLine();
+            if(memberAnswer.equalsIgnoreCase("y") || memberAnswer.equalsIgnoreCase("n")) {
+                isPassive = checkMemberPay(memberAnswer, isPassive);
+            } else {
+
+            }
+        }while(!memberAnswer.equalsIgnoreCase("y") && !memberAnswer.equalsIgnoreCase("n"));
+        return isPassive;
+    }
+
     //Made by Lasse
     public static boolean hasMemberPaid(Scanner scanner) {
         boolean hasPaid = false;

@@ -21,7 +21,7 @@ public class Butterfly
             System.out.println("Enter swimmer " + swimmerNumber + "'s name");
             String swimmerName = scanner.nextLine();
 
-            Member.nameConditions(swimmerName);
+            //Member.nameConditions(swimmerName);
             System.out.println("Enter swimmer " + swimmerNumber + "'s time");
 
             double swimmerTime = scanner.nextDouble();

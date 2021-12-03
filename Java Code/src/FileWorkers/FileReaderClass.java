@@ -11,13 +11,13 @@ import java.io.PrintWriter;
 
 public class FileReaderClass {
     //Made by Lasse
-    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail, int key, String filePath){
+    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail,boolean isPassive, boolean isPartOfStaff, int key, String filePath){
 
         if(key == 1) {
             try {
                 FileWriter writer = new FileWriter(filePath, true);
 
-                writer.append(memberName + ";" + memberAge + ";" + hasPaid + ";" + getEmail);
+                writer.append(memberName + ";" + memberAge + ";" + hasPaid + ";" + getEmail + ";" + isPassive + ";" + isPartOfStaff);
                 writer.append("\n");
 
                 writer.close();
@@ -95,6 +95,8 @@ public class FileReaderClass {
         String age = "";
         String hasPaid = "";
         String email = "";
+        String isPassive = "";
+        String isPartOfStaff = "";
         try {
             FileReader writer = new FileReader(filePath);
             Scanner scanner = new Scanner((Readable) writer);
@@ -106,9 +108,11 @@ public class FileReaderClass {
                 age = scanner.next();
                 hasPaid = scanner.next();
                 email = scanner.next();
+                isPassive = scanner.next();
+                isPartOfStaff = scanner.next();
 
-                if(name.equals(searchTerm) || age.equals(searchTerm) || hasPaid.equals(searchTerm) || email.equals(searchTerm)){
-                    System.out.println(name + " " + age + " " + hasPaid + " " + email);
+                if(name.equals(searchTerm) || age.equals(searchTerm) || hasPaid.equals(searchTerm) || email.equals(searchTerm) || isPassive.equals(searchTerm) || isPartOfStaff.equals(searchTerm)){
+                    System.out.println(name + " " + age + " " + hasPaid + " " + email + " " + isPassive + " " + isPartOfStaff);
                 }
             }
         }catch(Exception e){

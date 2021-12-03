@@ -23,6 +23,14 @@ public class Member
         this.membersType = getMemberShipType();
     }
 
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPassive) {
+        this.name = name;
+        this.age = age;
+        this.email = email;
+        this.hasPaid = hasPaid;
+        this.isPassive = isPassive;
+    }
+
     public Member(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {    //Viktor      //Secondary Constructor
         this.name = name;
         this.age = age;
@@ -54,6 +62,10 @@ public class Member
     public boolean isHasPaid() {
         return hasPaid;
     }
+
+    public boolean isPassive() { return isPassive; }
+
+    public boolean isPartOfStaff() { return isPartOfStaff; }
 
     public Member(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff)
     {
