@@ -24,18 +24,7 @@ public class FileReaderClass {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if(key == 2){
-            try{
-                FileWriter writer = new FileWriter(filePath,true);
-
-                writer.append(memberName + ";" + memberAge +";"+ hasPaid +";"+ getEmail +";"+ isPassive);
-                writer.append("\n");
-                writer.close();
-            }catch(IOException e){
-                e.printStackTrace();
-            }
-        }
-        else{
+        }else{
             try {
                 FileWriter writer = new FileWriter(filePath, true);
 

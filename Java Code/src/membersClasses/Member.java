@@ -65,6 +65,8 @@ public class Member
 
     public boolean isPassive() { return isPassive; }
 
+    public boolean isPartOfStaff() { return isPartOfStaff; }
+
     public Member(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff)
     {
         this.name = name;
