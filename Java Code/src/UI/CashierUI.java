@@ -9,11 +9,13 @@ public class CashierUI {
     public static void cashierMenu() {
         Scanner scanner = new Scanner(System.in);
         Boolean key = true;
+        System.out.println("Please choose an option");
+        System.out.println("1.      View Contingent");
+        System.out.println("2.      Prompt Chairman to remove a member");
         int menuChoice = scanner.nextInt();
         scanner.nextLine();
 
         do {
-            System.out.println("Please choose an option");
             switch (menuChoice) {
                 case 1: viewContigent();
                     key = false;
