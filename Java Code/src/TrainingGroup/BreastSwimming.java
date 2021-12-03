@@ -38,7 +38,7 @@ public class BreastSwimming
             System.out.println("Enter swimmer " + swimmerNumber + "'s time");
             double swimmerTime = scanner.nextDouble();
 
-            Member.nameConditions(swimmerName);
+            //Member.nameConditions(swimmerName);
 
             BreastSwimming breastSwimmingTime = new BreastSwimming(swimmerName, swimmerTime);
 

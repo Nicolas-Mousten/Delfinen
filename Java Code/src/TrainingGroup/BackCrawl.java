@@ -23,7 +23,7 @@ public class BackCrawl
 
             System.out.println("Enter swimmer " + swimmerNumber + "'s time");
             double swimmerTime = scanner.nextDouble();
-            Member.nameConditions(swimmerName);
+            //Member.nameConditions(swimmerName);
 
             new BackCrawl(swimmerName, swimmerTime);
             swimmerNumber++;

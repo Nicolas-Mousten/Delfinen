@@ -35,7 +35,7 @@ public class CreateMembers {
             String email = Members.get(i).getEmail();
             boolean hasPaid = Members.get(i).isHasPaid();
             boolean isPassive = Members.get(i).isPassive();
-            FileReaderClass.addLineToCsvFile(name,age,hasPaid,email, isPassive,2,"Resources/MembersList.csv");
+            //FileReaderClass.addLineToCsvFile(name,age,hasPaid,email, isPassive,2,"Resources/MembersList.csv");
         }
 
     }
