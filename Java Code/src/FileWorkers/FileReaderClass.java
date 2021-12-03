@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 public class FileReaderClass {
     //Made by Lasse
-    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail, int key, String filePath){
+    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail,boolean isPassive, int key, String filePath){
 
         if(key == 1) {
             try {
@@ -24,7 +24,18 @@ public class FileReaderClass {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else{
+        }else if(key == 2){
+            try{
+                FileWriter writer = new FileWriter(filePath,true);
+
+                writer.append(memberName + ";" + memberAge +";"+ hasPaid +";"+ getEmail +";"+ isPassive);
+                writer.append("\n");
+                writer.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+        else{
             try {
                 FileWriter writer = new FileWriter(filePath, true);
 

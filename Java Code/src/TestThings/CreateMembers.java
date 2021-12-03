@@ -22,9 +22,11 @@ public class CreateMembers {
             int randNames = random.nextInt(names.length-1)+1;
             int randAge = random.nextInt(100-1)+1;
             boolean randHasPaid = random.nextBoolean();
+            boolean isPassive = random.nextBoolean();
+
             String name = names[randNames];
             String email = name+"@"+i;
-            Member currentMember = new Member(name,randAge,email,randHasPaid);
+            Member currentMember = new Member(name,randAge,email,randHasPaid,isPassive);
             Members.add(currentMember);
         }
         for (int i = 0; i < Members.size(); i++) {
@@ -32,8 +34,8 @@ public class CreateMembers {
             int age = Members.get(i).getAge();
             String email = Members.get(i).getEmail();
             boolean hasPaid = Members.get(i).isHasPaid();
-            int yearlySubscription = Members.get(i).getMemberShipType().getYearlySubscriptionPrice();
-            FileReaderClass.addLineToCsvFile(name,age,hasPaid,email,1,"Resources/MembersList.csv");
+            boolean isPassive = Members.get(i).isPassive();
+            FileReaderClass.addLineToCsvFile(name,age,hasPaid,email, isPassive,2,"Resources/MembersList.csv");
         }
 
     }
