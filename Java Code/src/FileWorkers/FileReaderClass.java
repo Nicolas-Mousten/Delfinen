@@ -13,7 +13,6 @@ public class FileReaderClass {
     //Made by Lasse
     public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail,boolean isPassive, boolean isPartOfStaff, int key, String filePath){
 
-        if(key == 1) {
             try {
                 FileWriter writer = new FileWriter(filePath, true);
 
@@ -24,18 +23,6 @@ public class FileReaderClass {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else{
-            try {
-                FileWriter writer = new FileWriter(filePath, true);
-
-                writer.append(memberName + ";" + memberAge + ";" + hasPaid + ";" + getEmail);
-                writer.append("\n");
-
-                writer.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     public static void addSwimmerToCsvFile(String memberName, String getEmail, double swimmerTime, String filePath){
