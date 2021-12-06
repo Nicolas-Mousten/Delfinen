@@ -51,14 +51,4 @@ public class CreateMembers
 
     }
 
-
-    public static void printCashier()
-    {
-        System.out.println("Cashier");
-    }
-
-    public static void printTrainer()
-    {
-        System.out.println("Trainer");
-    }
 }

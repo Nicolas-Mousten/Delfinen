@@ -30,11 +30,11 @@ public class Chairman extends Cashier
             switch(menuChoice) {
                 case 1:
                     removeMember(scanner);
-                    whileKey = false;
+
                     break;
                 case 2:
                     inputNewMembers(scanner);
-                    whileKey = false;
+
                     break;
                 case 3:
                     String filePath = "Resources/MembersList.csv";
@@ -42,11 +42,11 @@ public class Chairman extends Cashier
                     int key = 1;
                     String searchTerm = scanner.nextLine();
                     FileReaderClass.searchData(searchTerm, filePath);
-                    whileKey = false;
+
                     break;
                 case 4:
                     editMemberFile(scanner);
-                    whileKey = false;
+
                     break;
                 case 5:
                     whileKey = false;

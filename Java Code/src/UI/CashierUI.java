@@ -16,7 +16,7 @@ public class CashierUI {
         System.out.println("Please choose an option");
         System.out.println("1.      View Contingent");
         System.out.println("2.      Prompt Chairman to remove a member");
-        System.out.println("3.      press \"q\" to quit");
+        System.out.println("3.      quit");
         menuChoice = scanner.nextInt();
         scanner.nextLine();
 
