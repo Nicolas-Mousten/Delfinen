@@ -37,6 +37,21 @@ public class FileReaderClass {
             }
         }
     }
+
+    public static void addSwimmerToCsvFile(String memberName, String getEmail, double swimmerTime, String filePath){
+
+            try {
+                FileWriter writer = new FileWriter(filePath, true);
+
+                writer.append(memberName + ";" + getEmail + ";" + swimmerTime);
+                writer.append("\n");
+
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+        }
+    }
+
     //Made by Lasse
     public static boolean removeLine(String searchTermToRemoveLine, String filePath, int position){
         //Når man kalder denne metode til er fjerne i linje i en csv fil, skal man give den positionen på tingen man vil søge efter det er 'position'
@@ -88,6 +103,11 @@ public class FileReaderClass {
         }
         return checkForData;
     }
+
+    public static void printAll(){
+
+    }
+
     //Made by Lasse
     public static void searchData(String searchTerm, String filePath){
         boolean found = false;
