@@ -6,6 +6,7 @@ public class System {
         int loginUser = LoginUI.startMenu();
         switch (loginUser) {
             case 1:
+
                 break;
             case 2:
                 CashierUI.cashierMenu();

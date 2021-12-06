@@ -42,14 +42,14 @@ public class Chairman extends Cashier
             {
                 case 1:
                     removeMember(scanner);
-                    whileKey = false;
+
                     break;
 
 
                 case 2:
                     ChooseDiscipline.chooseSwimmingDiscipline();
                     inputNewMembers(scanner);
-                    whileKey = false;
+
                     break;
 
 
@@ -58,13 +58,13 @@ public class Chairman extends Cashier
                     System.out.println("Please write what you want to search after");
                     String searchTerm = scanner.nextLine();
                     FileReaderClass.searchData(searchTerm, filePath);
-                    whileKey = false;
+
                     break;
 
 
                 case 4:
                     editMemberFile(scanner);
-                    whileKey = false;
+
                     break;
 
                 case 5:
