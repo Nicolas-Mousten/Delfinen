@@ -24,7 +24,8 @@ public class Member
         this.membersType = getMemberShipType();
     }
 
-    public Member(String name, int age, String email, boolean hasPaid, boolean isPassive) {
+    public Member(String name, int age, String email, boolean hasPaid, boolean isPassive)
+    {
         this.name = name;
         this.age = age;
         this.email = email;
@@ -41,6 +42,7 @@ public class Member
         this.isPassive = isPassive;
         this.isPartOfStaff = isPartOfStaff;
         this.membersType = getMemberShipType();
+
     }
 
     public static void nameConditions(String nameOne)
@@ -83,9 +85,15 @@ public class Member
         return hasPaid;
     }
 
-    public boolean isPassive() { return isPassive; }
+    public boolean isPassive()
+    {
+        return isPassive;
+    }
 
-    public boolean isPartOfStaff() { return isPartOfStaff; }
+    public boolean isPartOfStaff()
+    {
+        return isPartOfStaff;
+    }
 
     public Member(String name, int age, boolean hasPaid, boolean isPassive, boolean isPartOfStaff)
     {
