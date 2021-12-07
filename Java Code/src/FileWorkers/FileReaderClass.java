@@ -15,7 +15,7 @@ public class FileReaderClass
 
     //Made by Lasse
     // Adding new line for swimmer data to CSV file
-    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail, boolean isPassive, boolean isPartOfStaff, int key, String filePath)
+    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail, boolean isPassive, boolean isPartOfStaff, String filePath)
     {
 
         // Wrapping file writer in a try/catch block
