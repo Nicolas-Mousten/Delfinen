@@ -1,5 +1,6 @@
 package membersClasses;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import FileWorkers.FileReaderClass;
@@ -20,61 +21,67 @@ public class Chairman extends Cashier {
 
         // Do everything in the do block
         do {
-            // Calling the printChairmanMenu method
-            printChairmanMenu();
+            try {
+                // Calling the printChairmanMenu method
+                printChairmanMenu();
 
-            // Lets user make an option by pressing a number
-            System.out.println("Please write a number for the option you would like to choose");
-            int menuChoice = scanner.nextInt();
-            scanner.nextLine();
+                // Lets user make an option by pressing a number
+                System.out.println("Please write a number for the option you would like to choose");
+                int menuChoice = scanner.nextInt();
+                scanner.nextLine();
 
-            // Defining user choices
-            switch (menuChoice) {
+                // Defining user choices
+                switch (menuChoice) {
 
-                // 1. Access the remove member method
-                case 1:
-                    removeMember(scanner);
-                    System.out.println("Press any key to continue");
-                    scanner.nextLine();
+                    // 1. Access the remove member method
+                    case 1:
+                        removeMember(scanner);
+                        System.out.println("Press any key to continue");
+                        scanner.nextLine();
 
-                    break;
+                        break;
 
-                // 2. Input new members
-                case 2:
-                    inputNewMembers(scanner);
-                    break;
+                    // 2. Input new members
+                    case 2:
+                        inputNewMembers(scanner);
+                        break;
 
-                // 3. Search in CSV file
-                case 3:
-                    String filePath = "Resources/MembersList.csv";
-                    System.out.println("Please write what you want to search after");
-                    String searchTerm = scanner.nextLine();
-                    FileReaderClass.searchData(searchTerm, filePath);
-                    System.out.println("Press any key to continue");
-                    scanner.nextLine();
+                    // 3. Search in CSV file
+                    case 3:
+                        String filePath = "Resources/MembersList.csv";
+                        System.out.println("Please write what you want to search after");
+                        String searchTerm = scanner.nextLine();
+                        FileReaderClass.searchData(searchTerm, filePath);
+                        System.out.println("Press any key to continue");
+                        scanner.nextLine();
 
-                    break;
+                        break;
 
-                // 4. Edit member file
-                case 4:
-                    editMemberFile(scanner);
-                    break;
+                    // 4. Edit member file
+                    case 4:
+                        editMemberFile(scanner);
+                        break;
 
-                case 5:
-                    viewContigent();
-                    System.out.println("Press any key to continue");
-                    scanner.nextLine();
-                    break;
+                    case 5:
+                        viewContigent();
+                        System.out.println("Press any key to continue");
+                        scanner.nextLine();
+                        break;
 
-                // 6. View prompt
-                case 6:
-                    removePromptMember(scanner);
-                    break;
+                    // 6. View prompt
+                    case 6:
+                        removePromptMember(scanner);
+                        break;
 
-                // 7. Watch Lasse's brain melt down slowly ...
-                case 7:
-                    whileKey = false;
-                    break;
+                    // 7. Watch Lasse's brain melt down slowly ...
+                    case 7:
+                        whileKey = false;
+                        break;
+                }
+            }catch(InputMismatchException e){
+                System.out.println("Invalid input");
+                whileKey = false;
+
             }
 
         }
