@@ -39,7 +39,6 @@ public class Chairman extends Cashier
                 case 3:
                     String filePath = "Resources/MembersList.csv";
                     System.out.println("Please write what you want to search after");
-                    int key = 1;
                     String searchTerm = scanner.nextLine();
                     FileReaderClass.searchData(searchTerm, filePath);
 
@@ -49,13 +48,14 @@ public class Chairman extends Cashier
 
                     break;
                 case 5:
-                    whileKey = false;
+                    viewContigent();
                     break;
                 case 6:
-                    viewPrompt();
+                    removePromptMember(scanner);
                     whileKey = false;
                     break;
                 case 7:
+                    whileKey = false;
                     break;
             }
 
@@ -81,24 +81,33 @@ public class Chairman extends Cashier
     }
 
     public static void printChairmanMenu() {
-        String[] ChairmanMenu = {"Remove member", "Add member", "Search data", "Edit data", "View contigent", "View prompts", "Exit program"};
+        String[] ChairmanMenu = {"Remove member", "Add member", "Search data", "Edit data", "View contingent", "View prompts", "Exit program"};
         int[] ChairmanMenuNumbers = {1, 2, 3, 4, 5, 6, 7};
         for (int i = 0; i < ChairmanMenuNumbers.length; i++) {
             System.out.println(ChairmanMenuNumbers[i] + " " + ChairmanMenu[i]);
         }
     }
 
-    public static void viewPrompt(){
-        int key = 0;
+    public static void removePromptMember(Scanner scanner){
         String filePath = "Resources/MembersToBeRemoved.csv";
-        System.out.println("Please write the search term");
-        String searchTerm = scanner.nextLine();
-        FileReaderClass.searchData(searchTerm, filePath);
+        int position = 4;
+        FileReaderClass.printAll(filePath);
+
+        boolean checkForData = false;
+        do {
+            System.out.println("\nPlease type the email of the member you want to remove\nIf you dont want to remove anyone type '1'");
+            String removeUser = scanner.nextLine();
+            checkForData = FileReaderClass.removeLine(removeUser, filePath, position);
+        } while (!checkForData);
+    }
+
+    public static void viewPrompt(String filePath){
+        FileReaderClass.printAll(filePath);
     }
 
     public static void printPositionMenu() {
-        String[] ChairmanMenu = {"Name", "Age", "Has member paid", "E-mail"};
-        int[] ChairmanMenuNumbers = {1, 2, 3, 4};
+        String[] ChairmanMenu = {"Name", "Age", "Has member paid", "E-mail", "Is member staff", "Is member passive member"};
+        int[] ChairmanMenuNumbers = {1, 2, 3, 4, 5, 6};
         for (int i = 0; i < ChairmanMenuNumbers.length; i++) {
             System.out.println(ChairmanMenuNumbers[i] + " " + ChairmanMenu[i]);
         }
@@ -107,7 +116,7 @@ public class Chairman extends Cashier
     public static void removeMember(Scanner scanner){
         String filePath = "Resources/MembersList.csv";
         int position = 4;                                   //Dette er positionen i csv filen jeg vil søge efter. Vi går efter email da det er unik for hver member
-        //og email ligger på position 4
+                                                            //og email ligger på position 4
         boolean checkForData = false;
         do {
             System.out.println("Please write the email of the member you would like to delete");
@@ -118,7 +127,6 @@ public class Chairman extends Cashier
 
     public static void inputNewMembers(Scanner scanner){
         String filePath = "Resources/MembersList.csv";
-        int key = 1;
         System.out.println("Please type in the new members name");
         String memberName = scanner.nextLine();
         System.out.println("Please type in new members age");
@@ -129,7 +137,7 @@ public class Chairman extends Cashier
         boolean isPassive = isMemberPassive(scanner);
         boolean isPartOfStaff = isMemberPartOfStaff(scanner);
 
-        FileReaderClass.addLineToCsvFile(memberName, memberAge, hasPaid, getEmail, isPassive, isPartOfStaff, key, filePath);
+        FileReaderClass.addLineToCsvFile(memberName, memberAge, hasPaid, getEmail, isPassive, isPartOfStaff, filePath);
     }
     //Made by Lasse
     public static String getMemberEmail(Scanner scanner){

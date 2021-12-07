@@ -1,6 +1,5 @@
 package FileWorkers;
-import java.io.IOException;
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileReader;
@@ -11,7 +10,7 @@ import java.io.PrintWriter;
 
 public class FileReaderClass {
     //Made by Lasse
-    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail,boolean isPassive, boolean isPartOfStaff, int key, String filePath){
+    public static void addLineToCsvFile(String memberName, int memberAge, boolean hasPaid, String getEmail,boolean isPassive, boolean isPartOfStaff, String filePath){
 
             try {
                 FileWriter writer = new FileWriter(filePath, true);
@@ -40,8 +39,8 @@ public class FileReaderClass {
     }
 
     //Made by Lasse
-    public static boolean removeLine(String searchTermToRemoveLine, String filePath, int position){
-        //Når man kalder denne metode til er fjerne i linje i en csv fil, skal man give den positionen på tingen man vil søge efter det er 'position'
+    public static boolean removeLine(String searchTerm, String filePath, int position){
+        //Når man kalder denne metode til at fjerne en linje i en csv fil, skal man give den positionen på tingen man vil søge efter det er 'position'
         //man skal give filens 'filePath' og hvad man skal søge efter for at finde den korrekte linje at slette.
         int positionOfTerm = position - 1;
         String tempFile = "temp.txt";
@@ -56,12 +55,12 @@ public class FileReaderClass {
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
 
-            FileReader fr = new FileReader("Resources/MembersList.csv");
+            FileReader fr = new FileReader(filePath);
             BufferedReader br = new BufferedReader(fr);
 
             while((currentLine = br.readLine()) != null){                                 //currentLine bliver sat lig med den næste linje så længe den eksistere. Hvis næste linje ikke eksistere stopper while loopet.
                 data = currentLine.split(";");                                      //Her bliver den første linje i filen lagt i en array som splitter dem op i ','.
-                if(!(data[positionOfTerm].equalsIgnoreCase(searchTermToRemoveLine))){     //Her tjekker den om det du gerne vil havde fjernet er lig med den data der er gemt i data
+                if(!(data[positionOfTerm].equalsIgnoreCase(searchTerm))){                 //Her tjekker den om det du gerne vil havde fjernet er lig med den data der er gemt i data
                     pw.println(currentLine);                                              //Hvis de ikke er lig med hinanden så gemmer vi den i den nye fil
                 }else{
                     checkForData = true;
@@ -82,7 +81,7 @@ public class FileReaderClass {
             fw.close();
 
             oldFile.delete();
-            File temp = new File("Resources/MembersList.csv");
+            File temp = new File(filePath);
             newFile.renameTo(temp);
 
         }catch(Exception e){
@@ -91,9 +90,21 @@ public class FileReaderClass {
         return checkForData;
     }
 
-    public static void printAll(){
+    public static void printAll(String filePath){
+                try{
+                    File memberFile = new File(filePath);
+                    Scanner scanner = new Scanner(memberFile);
+                    while(scanner.hasNextLine()){
+                        String fileMembers = scanner.nextLine();
+                        System.out.println(fileMembers);
+                    }
+                    scanner.close();
+                }catch(FileNotFoundException e){
+                    System.out.println("Could not find file");
+                }
 
-    }
+            }
+
 
     //Made by Lasse
     public static void searchData(String searchTerm, String filePath){
@@ -152,7 +163,7 @@ public class FileReaderClass {
                     pw.println(currentLine);                                              //Hvis de ikke er lig med hinanden så gemmer vi den i den nye fil
                 }else{
                     data[positionOfTerm] = newData;
-                    pw.println(data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3]);
+                    pw.println(data[0] + ";" + data[1] + ";" + data[2] + ";" + data[3] + ";" + data[4] + ";" + data[5]);
                     checkForData = true;
                 }
             }
@@ -178,7 +189,6 @@ public class FileReaderClass {
             System.out.println("Error");
         }
     }
-
 
 }
 
