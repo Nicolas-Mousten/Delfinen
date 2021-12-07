@@ -21,9 +21,11 @@ public class CashierUI {
         scanner.nextLine();
 
             switch (menuChoice) {
-                case 1: viewContigent();
+                case 1:
+                    viewContigent();
                     break;
-                case 2: promptChairmanToRemoveMember();
+                case 2:
+                    promptChairmanToRemoveMember();
                     break;
                 case 3:
                     System.out.println("Goodbye");

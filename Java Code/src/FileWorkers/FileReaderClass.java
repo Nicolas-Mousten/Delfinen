@@ -59,7 +59,7 @@ public class FileReaderClass {
             BufferedReader br = new BufferedReader(fr);
 
             while((currentLine = br.readLine()) != null){                                 //currentLine bliver sat lig med den næste linje så længe den eksistere. Hvis næste linje ikke eksistere stopper while loopet.
-                data = currentLine.split(";");                                      //Her bliver den første linje i filen lagt i en array som splitter dem op i ','.
+                data = currentLine.split(";");                                      //Her bliver den første linje i filen lagt i en array som splitter dem op i ';'.
                 if(!(data[positionOfTerm].equalsIgnoreCase(searchTerm))){                 //Her tjekker den om det du gerne vil havde fjernet er lig med den data der er gemt i data
                     pw.println(currentLine);                                              //Hvis de ikke er lig med hinanden så gemmer vi den i den nye fil
                 }else{

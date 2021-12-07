@@ -26,14 +26,14 @@ public class CreateMembers
 
         for (int i = 0; i < 100; i++)
         {
-            int randNames = random.nextInt(names.length - 1) + 1;
+            int randNames = random.nextInt(names.length);
             int randAge = random.nextInt(100 - 1) + 1;
             boolean randHasPaid = random.nextBoolean();
             boolean isPassive = random.nextBoolean();
             boolean isPartOfStaff = random.nextBoolean();
 
             String name = names[randNames];
-            String email = name + "@" + i;
+            String email = name + "@" + i +".com";
             Member currentMember = new Member(name, randAge, email, randHasPaid, isPassive, isPartOfStaff);
             Members.add(currentMember);
         }
