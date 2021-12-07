@@ -3,7 +3,7 @@
 import UI.CashierUI;
 import UI.LoginUI;
 import membersClasses.Chairman;
-
+import UI.ChooseDisciplineUI;
 
 public class System
 {
@@ -15,8 +15,8 @@ public class System
         {
             // 1. Break
             case 1:
+                ChooseDisciplineUI.chooseSwimmingDiscipline();
                 break;
-
             // 2. Calling the cashierMenu method
             case 2:
                 CashierUI.cashierMenu();
