@@ -68,11 +68,10 @@ public class FileReaderClass {
             }
 
             if (checkForData){
-                System.out.println("File has been deleted");
+                System.out.println("File has been deleted\n");
             }else {
-                System.out.println("File not found");
+                System.out.println("File not found\n");
             }
-
             pw.flush();
             pw.close();
             fr.close();
@@ -85,24 +84,31 @@ public class FileReaderClass {
             newFile.renameTo(temp);
 
         }catch(Exception e){
-            System.out.println("Error");
+            System.out.println("Error\n");
         }
         return checkForData;
     }
 
-    public static void printAll(String filePath){
+    public static boolean printAll(String filePath){
+        int counter = 0;
+        boolean memberChecker = true;
                 try{
                     File memberFile = new File(filePath);
                     Scanner scanner = new Scanner(memberFile);
                     while(scanner.hasNextLine()){
                         String fileMembers = scanner.nextLine();
-                        System.out.println(fileMembers);
+                        String[] fileMembersArray = fileMembers.split(";");
+                        System.out.println("Name: " + fileMembersArray[0] + "  \t\tAge: " + fileMembersArray[1] + "\t\tHas member paid: " + fileMembersArray[2] + "\t\tE-mail: " + fileMembersArray[3] + "\t\t Is member passive: " + fileMembersArray[4] + "\t\tIs member part of staff: " + fileMembersArray[5]);
+                        counter++;
                     }
                     scanner.close();
+                    if(counter == 0){
+                        memberChecker = false;
+                    }
                 }catch(FileNotFoundException e){
-                    System.out.println("Could not find file");
+                    System.out.println("Could not find file\n");
                 }
-
+                return memberChecker;
             }
 
     //Made by Lasse
@@ -129,7 +135,7 @@ public class FileReaderClass {
                 isPartOfStaff = scanner.next();
 
                 if(name.equals(searchTerm) || age.equals(searchTerm) || hasPaid.equals(searchTerm) || email.equals(searchTerm) || isPassive.equals(searchTerm) || isPartOfStaff.equals(searchTerm)){
-                    System.out.println(name + " " + age + " " + hasPaid + " " + email + " " + isPassive + " " + isPartOfStaff);
+                    System.out.println("Name: " + name + "  \t\tAge: " + age + "\t\tHas member paid: " + hasPaid + "\t\tE-mail: " + email + "\t\t Is member passive: " + isPassive + "\t\tIs member part of staff: " + isPartOfStaff);
                 }
             }
             writer.close();
@@ -172,9 +178,9 @@ public class FileReaderClass {
                 }
             }
             if (checkForData){
-                System.out.println("File has been edited");
+                System.out.println("File has been edited\n");
             }else {
-                System.out.println("File not found");
+                System.out.println("File not found\n");
             }
 
             pw.flush();
@@ -189,7 +195,7 @@ public class FileReaderClass {
             newFile.renameTo(temp);
 
         }catch(Exception e){
-            System.out.println("Error");
+            System.out.println("Error\n");
         }
     }
 

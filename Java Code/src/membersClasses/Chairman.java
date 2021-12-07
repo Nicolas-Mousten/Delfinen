@@ -131,21 +131,22 @@ public class Chairman extends Cashier {
         }
     }
 
-    public static void removePromptMember(Scanner scanner){
+    public static void removePromptMember(Scanner scanner) {
         String filePath = "Resources/MembersToBeRemoved.csv";
-        int position = 4;
-        FileReaderClass.printAll(filePath);
+        int position = 4;      //Dette er positionen for e-mail i arrayen i MembersList.csv
+        boolean memberChecker = FileReaderClass.printAll(filePath);
 
-        boolean checkForData = false;
-        do {
-            System.out.println("\nPlease type the email of the member you want to remove\nIf you dont want to remove anyone type '1'");
-            String removeUser = scanner.nextLine();
-            checkForData = FileReaderClass.removeLine(removeUser, filePath, position);
-        } while (!checkForData);
-    }
-
-    public static void viewPrompt(String filePath){
-        FileReaderClass.printAll(filePath);
+        if (memberChecker) {
+            boolean checkForData = false;
+            do {
+                System.out.println("\nPlease type the email of the member you want to remove");
+                String removeUser = scanner.nextLine();
+                checkForData = FileReaderClass.removeLine(removeUser, filePath, position);
+            } while (!checkForData);
+        } else {
+            System.out.println("There are no members to remove\nPress any key to continue");
+            scanner.nextLine();
+        }
     }
 
     public static void printPositionMenu() {

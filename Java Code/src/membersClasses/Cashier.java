@@ -59,7 +59,7 @@ public class Cashier extends Trainer
 
             // Printing out the total contingent in kroner
             System.out.println("Here is the total contigent");
-            System.out.println(totalContigent + " kr");
+            System.out.println(totalContigent + " kr per år\n");
         }
 
         // Catching potential errors in runtime
