@@ -8,9 +8,6 @@ public class TrainingGroup
 {
     private ArrayList<Member> members = new ArrayList();
 
-    public TrainingGroup()
-    {
-    }
 
     public String getTopFiveSwimmers()
     {

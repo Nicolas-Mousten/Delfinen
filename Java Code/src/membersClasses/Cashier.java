@@ -3,75 +3,123 @@ package membersClasses;
 import java.io.*;
 import java.util.Scanner;
 
-public class Cashier extends Trainer{
-    public Cashier(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive) {
+// Cashier inherits from Trainer
+public class Cashier extends Trainer
+{
+    // Setting up a constructor for the cashier
+    public Cashier(String name, int age, String email, boolean hasPaid, boolean isPartOfStaff, boolean isPassive)
+    {
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
 
-    // Tobias har skrevet dette
-    public static void viewContigent() {
+    // Written by Tobias
+    public static void viewContigent()
+    {
+        // Creating a new FileWriter object
         File membersList = new File("Resources/MembersList.csv");
+
+        // Setting the total contingent to 0 by default
         int totalContigent = 0;
-        try {
-            // Husk at oprette en ny cashier for at teste med denne kode
-            /*Cashier cashier = new Cashier("testName",89,"fghdfjkgh",true,true,false);
-            cashier.viewContingent();*/
+        try
+        {
+            // Making a scanner for reading through the database
             Scanner DatabaseReader = new Scanner(membersList);
-            while(DatabaseReader.hasNextLine()) {
+
+            // Checking if there's a next line in the file
+            while (DatabaseReader.hasNextLine())
+            {
+
                 String data = DatabaseReader.nextLine();
+
+                // Split the Strings in the String[] array by ';'
                 String[] stringsInArray = data.split(";");
-                // Splitter String i forskellige variabler som kan bruges senere
-                String Name = stringsInArray[0];
+
+                // Splitting the String up in different variables for later use
+                String name = stringsInArray[0];
+
                 int age = Integer.parseInt(stringsInArray[1]);
+
                 Boolean hasPaid = Boolean.parseBoolean(stringsInArray[2]);
+
                 String email = stringsInArray[3];
-                Boolean isPassive = Boolean.parseBoolean(stringsInArray[4]);
-                Boolean isPartOfStaff = Boolean.parseBoolean(stringsInArray[5]);
-                // bruger age og has paid til at regne ud, hvor meget en kunde skal betale
-                MembersType membersType = new MembersType(age,isPassive);
+
+                boolean isPassive = Boolean.parseBoolean(stringsInArray[4]);
+
+                boolean isPartOfStaff = Boolean.parseBoolean(stringsInArray[5]);
+
+                // Using age and hasPaid to calculate the amount the user has to pay
+                MembersType membersType = new MembersType(age, isPassive);
+
+                // Set the continget to the yearly subscription price
                 int contigent = membersType.getYearlySubscriptionPrice();
-                // adder contigent til totalContigent
-                totalContigent = totalContigent+contigent;
+
+                // Adding contingent to the total contingent
+                totalContigent += contigent;
             }
+
+            // Printing out the total contingent in kroner
             System.out.println("Here is the total contigent");
-            System.out.println(totalContigent+" kr");
-        } catch (FileNotFoundException e) {
+            System.out.println(totalContigent + " kr");
+        }
+
+        // Catching potential errors in runtime
+        catch (FileNotFoundException e)
+        {
             System.out.println("file could not be found");
             e.printStackTrace();
         }
     }
 
-    // Tobias har skrevet dette
-    public static void promptChairmanToRemoveMember(){
+    // Written by Tobias
+    // Prompt chairman to remove member
+    public static void promptChairmanToRemoveMember()
+    {
+        // Creating a new FileWriter object
         File membersToBeRemovedList = new File("Resources/MembersToBeRemoved.csv");
         File membersList = new File("Resources/MembersList.csv");
 
-        try {
-            FileWriter fileWriter = new FileWriter(membersToBeRemovedList,true);
+        // Wrapping the FileWriter in a try/catch block
+        try
+        {
+            // Instantiating a new FileWriter object
+            FileWriter fileWriter = new FileWriter(membersToBeRemovedList, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             Scanner DatabaseReader = new Scanner(membersList);
-            while(DatabaseReader.hasNextLine()) {
+
+            // Running as long as the file has a next line
+            while (DatabaseReader.hasNextLine())
+            {
+
                 String data = DatabaseReader.nextLine();
                 String[] stringsInArray = data.split(";");
-                // Splitter String i forskellige variabler som kan bruges senere
+
+                // Split the Strings in the String[] array by ';'
                 String name = stringsInArray[0];
                 int age = Integer.parseInt(stringsInArray[1]);
-                Boolean hasPaid = Boolean.parseBoolean(stringsInArray[2]);
+                boolean hasPaid = Boolean.parseBoolean(stringsInArray[2]);
                 String email = stringsInArray[3];
 
                 // Dette if statement skriver til MembersToBeRemoved.csv, hvis en kunde ikke har betalt
-                if (hasPaid.equals(false)) {
-                    String abc = name+";"+age+";"+email;;
+                if (!hasPaid)
+                {
+                    String abc = name + ";" + age + ";" + email;
                     bufferedWriter.write(abc);
                     bufferedWriter.newLine();
                 }
             }
             bufferedWriter.close();
-            // Her er der to exceptions som der bliver fanget
-        } catch (FileNotFoundException e) {
+
+
+        }
+
+        // Catching potential errors caught in runtime
+        catch (FileNotFoundException e)
+        {
             System.out.println("file could not be found");
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e)
+        {
             System.out.println("there was an error");
             e.printStackTrace();
         }

@@ -2,48 +2,61 @@ package membersClasses;
 
 public class MembersType
 {
-    private int yearlySubscriptionPrice;
-    private String type;
+    // Setting up price variables for different member types
     private static int juniorMember = 1000;
     private static int seniorMember = 1600;
-    private static int pensionistMember = (int) Math.round(seniorMember*0.75);      //Laver pensionist pris 25% billigere æn Senior
-    private static int passiveMember = 500;
 
-    public MembersType(int age, Boolean isPassive)              //Viktor
+    // Calculating the pensioner member price based on the senior member price (it's 3/4 of the senior member price)
+    private static int pensionerMember = (int) Math.round(seniorMember * .75);
+    private static int passiveMember = 500;
+    private int yearlySubscriptionPrice;
+
+    //
+    private String memberType;
+
+    // MembersType - setting the member price based on each member's type
+    public MembersType(int age, boolean isPassive)
     {
-        if(age < 18 && !isPassive)
+        if (age < 18 && !isPassive)
         {
-            yearlySubscriptionPrice = juniorMember;                 //assigner den statiske værdi til objectet.
-            type = "juniorMember";
+            yearlySubscriptionPrice = juniorMember;
+            memberType = "juniorMember";
         }
 
         // Else if member is +18 and under 60 not passive
-        else if(age >= 18 && age < 60 && !isPassive)
+        else if (age >= 18 && age < 60 && !isPassive)
         {
             yearlySubscriptionPrice = seniorMember;
-            type="seniorMember";
+            memberType = "seniorMember";
         }
         // Else if member is over 60 and not passive
-        else if(age > 60 && !isPassive)
+        else if (age > 60 && !isPassive)
         {
-            yearlySubscriptionPrice = pensionistMember;
-            type="pensionistMember";
+            yearlySubscriptionPrice = pensionerMember;
+            memberType = "pensionerMember";
         }
         // Else is passive
         else
         {
             yearlySubscriptionPrice = 500;
-            type="passiveMember";
+            memberType = "passiveMember";
         }
     }
 
-    public int getYearlySubscriptionPrice() {
+    // Yearly subscription price
+    public int getYearlySubscriptionPrice()
+    {
         return yearlySubscriptionPrice;
     }
 
+
+    // Overriding
     @Override
-    public String toString() {      //Nicolas
-        return "yearlySubscriptionPrice=" + yearlySubscriptionPrice +
-                ", type='" + type + '\'';
+    public String toString()
+    {
+        return "MembersType{" +
+                "yearlySubscriptionPrice=" + yearlySubscriptionPrice +
+                ", memberType='" + memberType + '\'' +
+                '}';
     }
 }

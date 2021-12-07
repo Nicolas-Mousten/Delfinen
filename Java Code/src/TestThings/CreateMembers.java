@@ -17,13 +17,14 @@ public class CreateMembers
         createMembers();
     }
 
+    // Written by Nicolas
     public static void createMembers()
-    {                //Nicolas
-        // these are test objects for the MembersList
-
+    {
+        // Test elements for the random user data generator
         String[] names = {"Nicolas", "Lasse", "Tobias", "Harald", "Carl", "Gudit", "Erik"};
         ArrayList<Member> Members = new ArrayList<>();
 
+        // Creating random user data objects
         for (int i = 0; i < 100; i++)
         {
             int randNames = random.nextInt(names.length);
@@ -38,6 +39,7 @@ public class CreateMembers
             Members.add(currentMember);
         }
 
+        // Adding the data to the list as long as there are empty spaces left
         for (int i = 0; i < Members.size(); i++)
         {
             String name = Members.get(i).getName();
