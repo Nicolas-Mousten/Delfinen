@@ -30,6 +30,8 @@ public class Chairman extends Cashier
             switch(menuChoice) {
                 case 1:
                     removeMember(scanner);
+                    System.out.println("Press any key to continue");
+                    scanner.nextLine();
 
                     break;
                 case 2:
@@ -41,6 +43,8 @@ public class Chairman extends Cashier
                     System.out.println("Please write what you want to search after");
                     String searchTerm = scanner.nextLine();
                     FileReaderClass.searchData(searchTerm, filePath);
+                    System.out.println("Press any key to continue");
+                    scanner.nextLine();
 
                     break;
                 case 4:
@@ -49,10 +53,11 @@ public class Chairman extends Cashier
                     break;
                 case 5:
                     viewContigent();
+                    System.out.println("Press any key to continue");
+                    scanner.nextLine();
                     break;
                 case 6:
                     removePromptMember(scanner);
-                    whileKey = false;
                     break;
                 case 7:
                     whileKey = false;

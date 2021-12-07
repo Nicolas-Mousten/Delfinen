@@ -133,6 +133,8 @@ public class FileReaderClass {
                     System.out.println(name + " " + age + " " + hasPaid + " " + email + " " + isPassive + " " + isPartOfStaff);
                 }
             }
+            writer.close();
+            scanner.close();
         }catch(Exception e){
             e.printStackTrace();
         }
