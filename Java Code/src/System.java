@@ -1,9 +1,9 @@
 // Importing the CashierUI, LoginUI, and Chairman class
-
+import UI.ChooseDisciplineUI;
 import UI.CashierUI;
 import UI.LoginUI;
 import membersClasses.Chairman;
-import UI.ChooseDisciplineUI;
+
 
 public class System
 {

@@ -21,7 +21,7 @@ public class Chairman extends Cashier {
 
         // Do everything in the do block
         do {
-            try {
+            try {                   //Try catch statement made by Nicolas with change sin logic when needed.
                 // Calling the printChairmanMenu method
                 printChairmanMenu();
 
@@ -80,8 +80,8 @@ public class Chairman extends Cashier {
                 }
             }catch(InputMismatchException e){
                 System.out.println("Invalid input");
-                whileKey = false;
-
+                whileKey = true;
+                scanner.nextLine();
             }
 
         }

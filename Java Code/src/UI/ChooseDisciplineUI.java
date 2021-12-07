@@ -22,7 +22,7 @@ public class ChooseDisciplineUI
     {
         boolean whileKey;
         do {
-            try{
+            try{                        //Try catch statement made by Nicolas with change sin logic when needed.
             whileKey = true;
             // Enter number of swimmers
             System.out.println("Enter number of swimmers");

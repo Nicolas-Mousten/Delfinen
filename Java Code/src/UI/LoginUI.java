@@ -22,7 +22,7 @@ public class LoginUI
         boolean whileKey;
         // Do everything in the do block
         do {
-            try {
+            try {                                           //Try catch statement made by Nicolas with change sin logic when needed.
                 System.out.print("Choose 1 to log in as trainer\nChoose 2 to log in as cashier\nChoose 3 to log in as Chairman\n>");
                 whileKey =false;
                 // Getting choice

@@ -22,7 +22,7 @@ public class CashierUI
         boolean whileKey;
         // Do everything in the do block
         do {
-            try {
+            try {                       //Try catch statement made by Nicolas with change sin logic when needed.
                 whileKey = true;
                 // Instantiating new scanner object
 
