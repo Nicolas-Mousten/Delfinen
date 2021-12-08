@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 // Implementing the Comparable interface to sort data in the list because an object with to different variable types is added for each user
-public class Crawl implements Comparable<Crawl>
+public class Crawl extends SwimmingMoves
 {
     // Instantiating a new scanner
     static Scanner scanner = new Scanner(System.in);
@@ -23,11 +23,11 @@ public class Crawl implements Comparable<Crawl>
 
 
     // Method for back crawl time registration
-    public static ArrayList<Crawl> registerCrawlTimes(int numberOfSwimmers)
+    public static ArrayList<SwimmingMoves> registerCrawlTimes(int numberOfSwimmers)
     {
 
         // ArrayList to add the objects to
-        ArrayList<Crawl> crawlTimes = new ArrayList<>();
+        ArrayList<SwimmingMoves> crawlTimes = new ArrayList<>();
 
         // Minimum number of swimmers has to be 5
         // Otherwise the team is too small to be created
@@ -55,8 +55,8 @@ public class Crawl implements Comparable<Crawl>
             scanner.nextLine();
 
 
-            // Pass the name and time in as parameters to the object
-            Crawl crawlTime = new Crawl(swimmerName, swimmerTime);
+            // Pass the name and time in as parameters to the object                            Her is the fault
+            SwimmingMoves crawlTime = new SwimmingMoves(swimmerName, swimmerTime);
 
             // Then add the object as element to the array list for each loop iteration
             crawlTimes.add(crawlTime);
@@ -72,13 +72,11 @@ public class Crawl implements Comparable<Crawl>
         // once the times have been sorted longer down
         Collections.sort(crawlTimes);
 
-
         // Get names and times
         System.out.println("Top 5 times:");
 
         for (int i = 0; i < 5; i++)
         {
-
             System.out.println(crawlTimes.get(i).getSwimmerName());
             System.out.println(crawlTimes.get(i).getSwimmerTime());
 
@@ -90,10 +88,10 @@ public class Crawl implements Comparable<Crawl>
     }
 
     // Creating a constructor for crawl
+
     public Crawl(String swimmerName, double swimmerTime)
     {
-        this.swimmerName = swimmerName;
-        this.swimmerTime = swimmerTime;
+        super(swimmerName,swimmerTime);
     }
 
     // Sorting the times using the compareTo interface

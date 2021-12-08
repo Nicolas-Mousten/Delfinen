@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 // Implementing the Comparable interface to sort data in the list because an object with to different variable types is added for each user
-public class Butterfly implements Comparable<Butterfly>
+public class Butterfly extends SwimmingMoves
 {
 
     // Instantiating a new scanner
@@ -24,10 +24,10 @@ public class Butterfly implements Comparable<Butterfly>
 
 
     // Method for back crawl time registration
-    public static ArrayList<Butterfly> registerButterflyTimes(int numberOfSwimmers)
+    public static ArrayList<SwimmingMoves> registerButterflyTimes(int numberOfSwimmers)
     {
         // ArrayList to add the objects to
-        ArrayList<Butterfly> butterflySwimmingTimes = new ArrayList<>();
+        ArrayList<SwimmingMoves> butterflySwimmingTimes = new ArrayList<>();
 
         // Minimum number of swimmers has to be 5
         // Otherwise the team is too small to be created
@@ -56,7 +56,7 @@ public class Butterfly implements Comparable<Butterfly>
             scanner.nextLine();
 
             // Pass the name and time in as parameters to the object
-            Butterfly butterflySwimmingTime = new Butterfly(swimmerName, swimmerTime);
+            SwimmingMoves butterflySwimmingTime = new SwimmingMoves(swimmerName, swimmerTime);
 
             // Then add the object as element to the array list for each loop iteration
             butterflySwimmingTimes.add(butterflySwimmingTime);
@@ -93,8 +93,7 @@ public class Butterfly implements Comparable<Butterfly>
     // Creating a constructor for butterfly
     public Butterfly(String swimmerName, double swimmerTime)
     {
-        this.swimmerName = swimmerName;
-        this.swimmerTime = swimmerTime;
+        super(swimmerName,swimmerTime);
     }
 
     // Sorting the times using the compareTo interface

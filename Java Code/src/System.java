@@ -15,7 +15,7 @@ public class System
         {
             // 1. Break
             case 1:
-                //ChooseDisciplineUI.chooseSwimmingDiscipline();
+                ChooseDisciplineUI.chooseSwimmingDiscipline();
                 break;
             // 2. Calling the cashierMenu method
             case 2:

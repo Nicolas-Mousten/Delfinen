@@ -1,6 +1,8 @@
 Tobias;88;false;Tobias@0.com;false;false
 Erik;72;true;Erik@1.com;false;true
 Erik;59;false;Erik@2.com;false;false
+Tobias;28;true;Tobias@3.com;false;true
+Gudit;79;false;Gudit@4.com;false;true
 Erik;18;false;Erik@5.com;false;true
 Harald;77;true;Harald@6.com;true;true
 Nicolas;92;true;Nicolas@7.com;true;false
@@ -83,6 +85,8 @@ Gudit;44;true;Gudit@84.com;false;false
 Erik;86;false;Erik@85.com;true;false
 Erik;42;true;Erik@86.com;false;true
 Nicolas;38;true;Nicolas@87.com;true;false
+Gudit;87;false;Gudit@88.com;true;false
+Nicolas;49;false;Nicolas@89.com;true;true
 Carl;11;false;Carl@90.com;false;true
 Erik;77;true;Erik@91.com;false;true
 Nicolas;48;false;Nicolas@92.com;true;false
@@ -90,4 +94,5 @@ Tobias;68;false;Tobias@93.com;false;false
 Harald;70;false;Harald@94.com;true;true
 Gudit;87;false;Gudit@95.com;false;false
 Tobias;25;false;Tobias@96.com;false;false
-LasseLasse;666;true;LasseLasse@Lasse.Lasse;false;false
+Nicolas;14;true;Nicolas@97.com;false;false
+Nicolas;89;true;Nicolas@98.com;true;true

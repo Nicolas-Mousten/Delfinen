@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 
 // Implementing the Comparable interface to sort data in the list because an object with to different variable types is added for each user
-public class BackCrawl implements Comparable<BackCrawl>
+public class BackCrawl extends SwimmingMoves
 {
 
     // Instantiating a new scanner
@@ -24,10 +24,10 @@ public class BackCrawl implements Comparable<BackCrawl>
     private double swimmerTime;
 
     // Method for back crawl time registration
-    public static ArrayList<BackCrawl> registerBackCrawlTimes(int numberOfSwimmers)
+    public static ArrayList<SwimmingMoves> registerBackCrawlTimes(int numberOfSwimmers)
     {
         // ArrayList to add the objects to
-        ArrayList<BackCrawl> backCrawlTimes = new ArrayList<>();
+        ArrayList<SwimmingMoves> backCrawlTimes = new ArrayList<>();
 
         // Minimum number of swimmers has to be 5
         // Otherwise the team is too small to be created
@@ -55,7 +55,7 @@ public class BackCrawl implements Comparable<BackCrawl>
             scanner.nextLine();
 
             // Pass the name and time in as parameters to the object
-            BackCrawl backCrawlTime = new BackCrawl(swimmerName, swimmerTime);
+            SwimmingMoves backCrawlTime = new SwimmingMoves(swimmerName, swimmerTime);
 
             // Then add the object as element to the array list for each loop iteration
             backCrawlTimes.add(backCrawlTime);
@@ -95,8 +95,7 @@ public class BackCrawl implements Comparable<BackCrawl>
     // Creating a constructor for back crawl
     public BackCrawl(String swimmerName, double swimmerTime)
     {
-        this.swimmerName = swimmerName;
-        this.swimmerTime = swimmerTime;
+        super(swimmerName,swimmerTime);
     }
 
     // Sorting the times using the compareTo interface

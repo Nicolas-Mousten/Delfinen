@@ -1,5 +1,8 @@
 package FileWorkers;
+import TrainingGroup.SwimmingMoves;
+
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileReader;
@@ -24,12 +27,12 @@ public class FileReaderClass {
             }
     }
 
-    public static void addSwimmerToCsvFile(String memberName, String getEmail, double swimmerTime, String filePath){
+    public static void addSwimmerToCsvFile(String memberName, String memberEmail, ArrayList<SwimmingMoves> listOfTimes, String filePath){
 
             try {
                 FileWriter writer = new FileWriter(filePath, true);
 
-                writer.append(memberName + ";" + getEmail + ";" + swimmerTime);
+                writer.append(memberName + ";" + memberEmail + ";" + listOfTimes);
                 writer.append("\n");
 
                 writer.close();
