@@ -48,7 +48,7 @@ public class CreateMembers
             boolean hasPaid = Members.get(i).isHasPaid();
             boolean isPassive = Members.get(i).isPassive();
             boolean isPartOfStaff = Members.get(i).isPartOfStaff();
-            FileReaderClass.addLineToCsvFile(name, age, hasPaid, email, isPassive, isPartOfStaff, "Resources/MembersList.csv");
+            FileReaderClass.addLineToCsvFile(name, age, hasPaid, email, isPassive, isPartOfStaff,"Resources/MembersList.csv");
         }
 
     }

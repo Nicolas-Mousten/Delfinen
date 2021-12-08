@@ -40,17 +40,15 @@ public class BreastSwimming implements Comparable<BreastSwimming>
 
 
         // Dynamically updating the swimmer number each time a swimmer is being added
-        int swimmerNumber = 1;
         for (int i = 0; i < numberOfSwimmers; i++)
         {
 
             // Add swimmer name
-            System.out.println("Enter swimmer " + swimmerNumber + "'s name");
+            System.out.println("Enter swimmer's name");
             String swimmerName = scanner.nextLine();
 
-
             // Add swimmer time
-            System.out.println("Enter swimmer " + swimmerNumber + "'s time");
+            System.out.println("Enter swimmer's time");
             double swimmerTime = scanner.nextDouble();
 
             scanner.nextLine();
@@ -60,10 +58,6 @@ public class BreastSwimming implements Comparable<BreastSwimming>
 
             // Then add the object as element to the array list for each loop iteration
             breastSwimmingTimes.add(breastSwimmingTime);
-
-            // Update swimmer number
-            swimmerNumber++;
-
 
             System.out.println('\n');
         }

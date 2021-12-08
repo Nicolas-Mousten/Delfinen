@@ -47,6 +47,8 @@ public class Butterfly implements Comparable<Butterfly>
             System.out.println("Enter swimmer " + swimmerNumber + "'s name");
             String swimmerName = scanner.nextLine();
 
+            scanner.nextLine();
+
             // Add swimmer time
             System.out.println("Enter swimmer " + swimmerNumber + "'s time");
             double swimmerTime = scanner.nextDouble();
