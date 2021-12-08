@@ -47,6 +47,7 @@ public class CashierUI
                     case 2:
                         promptChairmanToRemoveMember();
                         whileKey = false;
+                        System.out.println("Chairman has been prompted!");
                         break;
 
                     // 3. Quit (with message)
