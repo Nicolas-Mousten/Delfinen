@@ -15,7 +15,7 @@ public class Chairman extends Cashier {
         super(name, age, email, hasPaid, isPartOfStaff, isPassive);
     }
 
-    // Written by Lasse
+    //Made by Lasse
     public static void chairmanMenu() {
         boolean whileKey = true;
 
@@ -90,6 +90,7 @@ public class Chairman extends Cashier {
         while (whileKey);
     }
 
+    //Made by Lasse
     // Edit member file method
     public static void editMemberFile(Scanner scanner) {
         // Setting up the file path
@@ -117,6 +118,7 @@ public class Chairman extends Cashier {
         FileReaderClass.editLine(searchTerm, newData, filePath, position);
     }
 
+    //Made by Lasse
     // Print chairman menu
     public static void printChairmanMenu() {
         // Creating options
@@ -131,6 +133,7 @@ public class Chairman extends Cashier {
         }
     }
 
+    //Made by Lasse
     public static void removePromptMember(Scanner scanner) {
         String filePath = "Resources/MembersToBeRemoved.csv";
         int position = 4;      //Dette er positionen for e-mail i arrayen i MembersList.csv
@@ -149,6 +152,7 @@ public class Chairman extends Cashier {
         }
     }
 
+    //Made by Lasse
     public static void printPositionMenu() {
         String[] ChairmanMenu = {"Name", "Age", "Has member paid", "E-mail", "Is member staff", "Is member passive member"};
         int[] ChairmanMenuNumbers = {1, 2, 3, 4, 5, 6};
@@ -157,6 +161,7 @@ public class Chairman extends Cashier {
         }
     }
 
+    //Made by Lasse
     public static void removeMember(Scanner scanner){
         String filePath = "Resources/MembersList.csv";
         int position = 4;                                   //Dette er positionen i csv filen jeg vil søge efter. Vi går efter email da det er unik for hver member
@@ -169,6 +174,7 @@ public class Chairman extends Cashier {
         } while (!checkForData);
     }
 
+    //Made by Lasse
     public static void inputNewMembers(Scanner scanner){
         String filePath = "Resources/MembersList.csv";
         System.out.println("Please type in the new members name");

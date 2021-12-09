@@ -27,6 +27,7 @@ public class FileReaderClass {
             }
     }
 
+    //Made by Lasse
     public static void addSwimmerToCsvFile(String memberName, String memberEmail, ArrayList<SwimmingMoves> listOfTimes, String filePath){
 
             try {
@@ -92,6 +93,7 @@ public class FileReaderClass {
         return checkForData;
     }
 
+    //Made by Lasse
     public static boolean printAll(String filePath){
         int counter = 0;
         boolean memberChecker = true;
@@ -148,6 +150,7 @@ public class FileReaderClass {
         }
     }
 
+    //Made by Lasse
     public static void editLine(String searchTerm, String newData, String filePath, int position){
         //Når man kalder denne metode til er fjerne i linje i en csv fil, skal man give den positionen på tingen man vil søge efter det er 'position'
         //man skal give filens 'filePath' og hvad man skal søge efter for at finde den korrekte linje at slette.
