@@ -23,7 +23,7 @@ public class LoginUI
         // Do everything in the do block
         do {
             try {                                           //Try catch statement made by Nicolas with change sin logic when needed.
-                System.out.print("Choose 1 to log in as Trainer\nChoose 2 to log in as Cashier\nChoose 3 to log in as Chairman\n>");
+                System.out.print("Choose 1 to log in as trainer\nChoose 2 to log in as cashier\nChoose 3 to log in as Chairman\n>");
                 whileKey =false;
                 // Getting choice
                 choice = sc.nextInt();
@@ -32,17 +32,9 @@ public class LoginUI
                 // If choice is 1
                 if (choice == 1) {
                     // Return 1 and print message
-                    System.out.println("Welcome Trainer");
-                    System.out.println("To proceed press 1, to go back to menu press 2");
-                    String key = sc.nextLine();
-
-                    if (key.equals("1")) {
-                            // Return 1 and print message
-                            returnValue = 1;
-                        } else {
-                            UI.LoginUI.startMenu();
-                        }
-                    }
+                    returnValue = 1;
+                    System.out.println("Welcome trainer");
+                }
                 // If choice is 2
                 else if (choice == 2) {
                     // Return 2 and print message

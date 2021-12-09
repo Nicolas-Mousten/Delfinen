@@ -31,8 +31,7 @@ public class CashierUI
                 System.out.println("Please choose an option");
                 System.out.println("1.      View Contingent");
                 System.out.println("2.      Prompt Chairman to remove a member");
-                System.out.println("3.      Go back to menu");
-                System.out.println("4.      Quit");
+                System.out.println("3.      Quit");
                 menuChoice = scanner.nextInt();
                 scanner.nextLine();
 
@@ -51,13 +50,8 @@ public class CashierUI
                         System.out.println("Chairman has been prompted!");
                         break;
 
-                    case 3:
-                        UI.LoginUI.startMenu();
-                        whileKey = true;
-                        break;
-
                     // 3. Quit (with message)
-                    case 4:
+                    case 3:
                         whileKey = true;
                         System.out.println("Goodbye");
                 }
