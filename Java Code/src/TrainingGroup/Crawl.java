@@ -44,16 +44,13 @@ public class Crawl extends SwimmingMoves
         {
 
             // Add swimmer name
-            System.out.println("Enter swimmer " + swimmerNumber + "'s name");
+            System.out.println("Enter swimmer " + swimmerNumber + "'s name\n");
             String swimmerName = scanner.nextLine();
-
 
             // Add swimmer time
             System.out.println("Enter swimmer " + swimmerNumber + "'s time");
             double swimmerTime = scanner.nextDouble();
-
             scanner.nextLine();
-
 
             // Pass the name and time in as parameters to the object                            Her is the fault
             SwimmingMoves crawlTime = new SwimmingMoves(swimmerName, swimmerTime);
