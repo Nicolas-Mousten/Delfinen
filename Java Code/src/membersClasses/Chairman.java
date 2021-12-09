@@ -70,7 +70,7 @@ public class Chairman extends Cashier {
 
                     // 6. View prompt
                     case 6:
-                        removePromptMember(scanner);
+                        viewPrompts(scanner);
                         break;
 
                     // 7. Watch Lasse's brain melt down slowly ...
@@ -134,11 +134,15 @@ public class Chairman extends Cashier {
     }
 
     //Made by Lasse
-    public static void removePromptMember(Scanner scanner) {
+    public static void viewPrompts(Scanner scanner) {
         String filePath = "Resources/MembersToBeRemoved.csv";
         int position = 4;      //Dette er positionen for e-mail i arrayen i MembersList.csv
         boolean memberChecker = FileReaderClass.printAll(filePath);
 
+        removeMemberPrompt(memberChecker, filePath, position);
+    }
+
+    public static void removeMemberPrompt(boolean memberChecker, String filePath, int position){
         if (memberChecker) {
             boolean checkForData = false;
             do {

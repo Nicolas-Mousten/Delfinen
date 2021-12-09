@@ -23,7 +23,7 @@ public class LoginUI
         // Do everything in the do block
         do {
             try {                                           //Try catch statement made by Nicolas with change sin logic when needed.
-                System.out.print("Choose 1 to log in as trainer\nChoose 2 to log in as cashier\nChoose 3 to log in as Chairman\n>");
+                System.out.print("Choose 1 to log in as Trainer\nChoose 2 to log in as Cashier\nChoose 3 to log in as Chairman\n>");
                 whileKey =false;
                 // Getting choice
                 choice = sc.nextInt();
