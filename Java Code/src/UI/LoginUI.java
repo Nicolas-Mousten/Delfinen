@@ -32,9 +32,17 @@ public class LoginUI
                 // If choice is 1
                 if (choice == 1) {
                     // Return 1 and print message
-                    returnValue = 1;
                     System.out.println("Welcome Trainer");
-                }
+                    System.out.println("To proceed press 1, to go back to menu press 2");
+                    String key = sc.nextLine();
+
+                    if (key.equals("1")) {
+                            // Return 1 and print message
+                            returnValue = 1;
+                        } else {
+                            UI.LoginUI.startMenu();
+                        }
+                    }
                 // If choice is 2
                 else if (choice == 2) {
                     // Return 2 and print message

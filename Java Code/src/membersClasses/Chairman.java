@@ -73,8 +73,12 @@ public class Chairman extends Cashier {
                         removePromptMember(scanner);
                         break;
 
-                    // 7. Watch Lasse's brain melt down slowly ...
                     case 7:
+                        UI.LoginUI.startMenu();
+                        break;
+
+                    // 7. Watch Lasse's brain melt down slowly ...
+                    case 8:
                         whileKey = false;
                         break;
                 }
@@ -122,10 +126,10 @@ public class Chairman extends Cashier {
     // Print chairman menu
     public static void printChairmanMenu() {
         // Creating options
-        String[] ChairmanMenu = {"Remove member", "Add member", "Search data", "Edit data", "View contigent", "View prompts", "Exit program"};
+        String[] ChairmanMenu = {"Remove member", "Add member", "Search data", "Edit data", "View contigent", "View prompts", "Go back to menu", "Exit program"};
 
         // Setting up numbers used for picking an option
-        int[] ChairmanMenuNumbers = {1, 2, 3, 4, 5, 6, 7};
+        int[] ChairmanMenuNumbers = {1, 2, 3, 4, 5, 6, 7, 8};
 
         // Setting each number equal to the options in the String array
         for (int i = 0; i < ChairmanMenuNumbers.length; i++) {
